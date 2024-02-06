@@ -1,0 +1,207 @@
+/*APPLY TO ALL*/
+* {
+  margin: 0; /*APPLY AT CONTENT*/
+  padding: 0; /*APPLY AT HEADER NAV*/
+  box-sizing: border-box; /*APPLY AT HEADER NAV*/
+}
+
+/*APPLY TO BODY*/
+body {
+  font-family: "Inter", sans-serif;
+  min-height: 100vh;
+  background: #f9f9f9;
+}
+
+/*APPLY TO HEADER*/
+header {
+  padding: 16px 0; /*APPLY AT HEADER PADDING (SPACING BETWEEN HEADER AND BOX NAV*/
+}
+
+header > .container {
+  background-color: #2a2c2e; /*BACKGROUND HEADER COLOR*/
+  width: 1200px; /*WIDTH OF HEADER*/
+  height: 96px; /*HEIGHT OF HEADER*/
+  margin: 0 auto; /*0=TOP& BOTTOM AUTO=LEFT & RIGHT. When both left and right margins are set to auto, it effectively centers the element horizontally within its containing parent element.*/
+  border-radius: 20px; /*RADIUS HEADER*/
+  display: flex;
+  flex-direction: row; /*CONTAINER SET TO HOR*/
+  justify-content: space-between; /*SET ROW & SPACE-BETWEEN CONTAINER SET TO HOR 1ST ITEM WILL GO TO LEFT LAST TO THE RIGHT*/
+  align-items: center;
+  padding: 32px; /*PADDING INSIDE OF ALL SIDES OF ELEMNTS */
+}
+
+/*NAV PROPERTIES TARGET MIDDLE WITH UL ELEMENTS*/
+header > .container > .middle > ul {
+  list-style: none; /*REMOVE BULLET*/
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: start;
+  gap: 32px;
+  color: #ffffff60;
+}
+
+header > .container > .middle > ul > li.active {
+  color: #f4d867; /*TARGET li WITH ELEMENTS ACTIVE*/
+}
+
+header > .container > .right {
+  /*TARGET WITH ELEMENTS RIGHT*/
+  display: flex;
+  flex-direction: row;
+  justify-content: start; /*ALLIGN THEM FROM LEFT EDGE TO RIGHT EDGE*/
+  align-items: center;
+  gap: 32px;
+}
+
+header > .container > .right > button {
+  /*TARGET RIGHT ELEMENTS BUTTON*/
+  all: unset; /*REMOVE STYLES SET BEFORE*/
+  background-color: #f4d867;
+  color: #2a2c2e;
+  padding: 16px 32px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/*NAV ALL BOOKS*/
+nav {
+  height: 80px;
+  background-color: #f4d867;
+  color: #f4ba30;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  white-space: nowrap; /* FORCE TEXT TO REMAIN ON SINGLE LINE*/
+}
+
+nav > h2 {
+  font-size: 56px;
+  font-weight: 400;
+}
+
+nav > h2.active {
+  color: #2a2c2e; /*TARGET H2 WITH ELEMENTS ACTIVE*/
+}
+
+/**************MAIN CONTENTS***************/
+main {
+  background-color: #2a2c2e;
+}
+
+main > .container {
+  max-width: 1200px;
+  margin: 0 auto; /*REMOVE TOP & BOTTOM MARGIN, LEFT & RIGHT MARGIN BE AUTOMATICALLY CALCULATE AS RESULT IT BEING CENTER*/
+  display: flex;
+  flex-wrap: wrap; /*DISPLAY: WRAP & FLEX-WRAP: WRAP RESULT ALLOW IT TO BE WRAPPED*/
+  justify-content: center;
+  gap: 16px; /*GAP CONTAINER & CONTENT IN CONTAINER WILL BE RESULT.. */
+  padding: 16px; /*PADDING TOP & BELOW OF CONTAINER & CONTENT IN CONTAINER WILL BE RESULT..*/
+}
+
+main > .container > .card {
+  /*TARGET CONTAINER WITH ELEMENTS CARD*/
+  height: 520px;
+  width: 300px;
+  border-radius: 20px;
+  background-color: white;
+  padding: 16px;
+}
+
+main > .container > .card > img {
+  /*TARGET CONTAINER & CARD WITH ELEMENTS IMG*/
+  width: 100%;
+  height: 350px;
+  object-fit: cover; /* ensures that the content (image or video) completely fills its container, while still preserving its aspect ratio and potentially cropping parts of the content to achieve this.*/
+  object-position: top;
+  border-radius: 16px;
+  margin-bottom: 16px;
+}
+
+main > .container > .card > .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 12px;
+}
+
+/**************FOOTER***************/
+footer {
+  background-color: #ffffff;
+  color: white;
+  padding-top: 16px;
+}
+
+footer > .container {
+  background-color: #2a2c2e;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+footer > .container > .top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+}
+
+footer > .container > .top > img {
+  max-width: 150px; /* Adjust the max-width as needed */
+}
+
+/**************SETTING THE SCREEN FOR RESPONSIVE***************/
+
+@media (max-width: 750px) {
+  /* Styles for smaller screens */
+  footer > .container > .bottom {
+    text-align: center;
+    gap: 8px;
+  }
+
+  footer > .container > .bottom > div {
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 751px) {
+  /* Styles for normal screens */
+  footer > .container > .bottom {
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+  }
+
+  footer > .container > .bottom > div {
+    flex-direction: row;
+    justify-content: flex-end; /* Align content to the right */
+  }
+}
+
+footer > .container > .bottom > div > span {
+  color: white;
+  flex-shrink: 0; /* Prevent the content from shrinking on smaller screens */
+}
+
+@media (max-width: 750px) {
+  header {
+    padding: 16px;
+  }
+  header > .container {
+    flex-direction: column;
+    width: auto; /* Remove fixed width */
+    height: auto;
+    gap: 16px; /* Adjust the gap for better spacing */
+    padding: 16px;
+  }
+  header > .container > .middle > ul {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
